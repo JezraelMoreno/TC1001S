@@ -23,8 +23,9 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        # Aumentar la velocidad del proyectil multiplicando por un factor mayor
+        speed.x = (x + 200) / 15  # Era /25, ahora /15 para más velocidad
+        speed.y = (y + 200) / 15  # Era /25, ahora /15 para más velocidad
 
 
 def inside(xy):
@@ -54,8 +55,9 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
+    # Aumentar la velocidad de movimiento de los objetivos
     for target in targets:
-        target.x -= 0.5
+        target.x -= 1.5  # Era -0.5, ahora -1.5 para más velocidad
 
     if inside(ball):
         speed.y -= 0.35
@@ -68,12 +70,24 @@ def move():
         if abs(target - ball) > 13:
             targets.append(target)
 
+    # Reposicionar objetivos que salen de la pantalla en lugar de terminar el juego
+    repositioned_targets = []
+    for target in targets:
+        if inside(target):
+            repositioned_targets.append(target)
+        else:
+            # Si el objetivo sale por la izquierda, reposicionarlo por la derecha
+            if target.x < -200:
+                new_y = randrange(-150, 150)
+                new_target = vector(200, new_y)
+                repositioned_targets.append(new_target)
+    
+    targets.clear()
+    targets.extend(repositioned_targets)
+
     draw()
 
-    for target in targets:
-        if not inside(target):
-            return
-
+    # Continuar el juego siempre (remover la condición que terminaba el juego)
     ontimer(move, 50)
 
 
