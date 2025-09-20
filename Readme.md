@@ -1,4 +1,6 @@
-# 🎯 Cannon Game - Mejoras Implementadas
+# 🎯 Mejoras a los juegos
+
+# Eder
 
 ## 📝 Descripción
 Este documento describe las mejoras implementadas en el juego Cannon para hacer la experiencia más dinámica y continua.
