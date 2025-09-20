@@ -65,14 +65,6 @@ targets.extend(repositioned_targets)
 - **Click en pantalla**: Dispara el proyectil hacia la posición del cursor
 - **Objetivo**: Impactar los círculos azules con el proyectil rojo
 
-## 🔄 Próximas Mejoras Sugeridas
-1. ✅ ~~Aumentar velocidad de proyectiles y objetivos~~
-2. ✅ ~~Implementar juego infinito~~
-3. 🔲 Sistema de puntuación
-4. 🔲 Efectos de sonido
-5. 🔲 Diferentes tipos de objetivos
-6. 🔲 Power-ups especiales
-7. 🔲 Niveles de dificultad progresiva
 
 # Cambios Vale 
 ---
